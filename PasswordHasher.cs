@@ -15,6 +15,9 @@ public class PasswordHasher
             32
         );
 
-        return Convert.ToBase64String(hash);
+        string saltString = Convert.ToBase64String(salt);
+        string hashString = Convert.ToBase64String(hash);
+
+        return $"{saltString}{hashString}";    // returns two elemts as a one text
     }
 }
