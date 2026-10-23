@@ -18,7 +18,7 @@ public class PasswordHasher
         string saltString = Convert.ToBase64String(salt);
         string hashString = Convert.ToBase64String(hash);
 
-        return $"{saltString}{hashString}";    // returns two elemts as a one text
+        return $"{saltString}:{hashString}";    // returns two elemts as a one text
     }
     public bool VerifyPassword(string password, string storedPassword)
     {
